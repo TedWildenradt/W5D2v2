@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <ul>
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |err| %>
+      <li><%= err %></li>
+      <% end %>
+    <% end %>
+  </ul>
+    <% if logged_in? %>
+      <%= button_to 'Sign Out', session_url, method: :delete %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_credentials(params[:user][:username],params[:user][:password])
-    if user 
+    if user
       login(user)
-      redirect_to links_url
+      redirect_to subs_url
     else
       flash[:errors] = ['Not good']
-      render :new 
-    end 
+      render :new
+    end
   end
 
   def destroy
