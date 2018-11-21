@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post.author_id = current_user.id
 
     if @post.save
-      redirect_to sub_url(@post.sub_id)
+      redirect_to post_url(@post)
     else
       flash[:errors] = @post.errors.full_messages
       redirect_to sub_url(@post.sub_id)
