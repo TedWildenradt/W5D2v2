@@ -21,9 +21,9 @@ class Sub < ApplicationRecord
   foreign_key: :sub_id,
   class_name: :Post
 
-  has_many :post_subs
+  # has_many :post_subs
 
-  has_many :posts,
-  through: :post_subs,
-  source: :post
+  # has_many :posts,
+  # through: :post_subs,
+  # source: :post
 end

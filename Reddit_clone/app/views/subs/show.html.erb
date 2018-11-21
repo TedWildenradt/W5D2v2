@@ -1,2 +1,18 @@
-<h1>Subs#show</h1>
-<p>Find me in app/views/subs/show.html.erb</p>
+<h1><%= @sub.title %></h1>
+
+<a href="<%= subs_url %>">All the SuBs</a>
+
+<ul>
+  <li><%= @sub.user.username %></li>
+  <li><%= @sub.description %></li>
+</ul>
+
+<h2>Posts</h2>
+
+<% @sub.posts.each do |post| %>
+  <ul>
+    <a href="<%= post_url(post) %>"><%= post.title %></a>
+  </ul>
+<% end %>
+
+<a href="<%= new_post_url %>">Create a New Post</a>
